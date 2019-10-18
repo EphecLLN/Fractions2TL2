@@ -80,9 +80,50 @@ public class Fraction {
 	 * Get a textual representation of the fraction
 	 * Ex : 3, 1/2, 4/3
 	 */
-	
 	public String toString() {
-		return "Fraction []";
+		int sign, num, den, max, min, rest;
+		String out = "";
+		if(this.numerator ==0){
+			return "0";
+		}
+		if(this.denominator ==0){
+			return "Divisin by 0 not permitted";
+		}
+		if(this.numerator == this.denominator){
+			return "1";
+		}
+		if(this.numerator*this.denominator <0){
+			sign = -1;
+			num = Math.abs(this.numerator);
+			den = Math.abs(this.denominator);
+		}
+		else{
+			sign = 1;
+			num = this.numerator;
+			den = this.denominator;
+		}
+		if(num > den) {
+			max = num;
+			min = den;
+		}
+		else {
+			max = den; 
+			min = num;
+		}
+		rest = max%min; 
+		while(true) {
+			if(rest ==0) {
+				rest = min;
+				break;
+			}
+			else {
+				max =min;
+				min = rest;
+				rest = max%min; 
+			}
+		}
+		out = sign*num/min + "/" + den/min;
+		return out;
 	}
 	
 	/** MUGISHA Tuyishime Rodrigue
