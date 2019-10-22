@@ -152,7 +152,14 @@ public class Fraction {
 	 * @return true if the current fraction represents an integer value
 	 */
 	public boolean isInteger() {
-		return false;
+		double test = (double)this.numerator / (double)this.denominator;
+		int i = (int)test;
+		if(i == test) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	/** COTTON Victor
