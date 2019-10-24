@@ -89,12 +89,84 @@ public class Fraction {
 	 * Represents the fraction as a mixed number, i.e. the sum of a integer and 
 	 * a proper fraction. 
 	 * Ex : 1 + 1/2
-	 * Ex : 2/3
+	 * Ex : 3/2
 	 * @return a textual representation of the fraction as a mixed number. 
 	 */
 	public String asMixedNumber() {
-		return "";
+		String s = "";
+        int pgcd = pgcd (numerator, denominator);
+        int reste = (Math.abs(numerator) % Math.abs(denominator));
+        int unites = (Math.abs(numerator) - reste) / Math.abs(denominator);
+        
+        if(denominator == 0){
+            s += "Dénominateur nul";
+        }
+   
+        else if(numerator == 0){
+            s += 0;
+        }
+        
+        else if(Math.abs(numerator) == Math.abs(denominator)){
+            if(numerator < 0 || denominator < 0){     
+                s += "-" + 1;
+            }
+            else{  
+                s += 1;
+                    
+            }
+        }
+        
+        else if(Math.abs(numerator) < Math.abs(denominator)){
+                numerator = numerator / pgcd;
+                denominator = denominator / pgcd;
+                if(denominator < 0 || numerator < 0){
+                    s += "-" + numerator + "/" + Math.abs(denominator);
+                }
+                else{
+            
+                    s += numerator + "/" + denominator;
+                }
+        }
+        
+        else if(Math.abs(numerator) > Math.abs(denominator)){
+            if((denominator < 0 && numerator < 0) || (denominator > 0 && numerator > 0) ){
+                if(reste == 0){
+                    s += unites;
+                }
+                else{
+                s += unites + " + " + reste + "/" + Math.abs(denominator);
+                }
+            }
+            
+            else{
+                if(reste == 0){
+                     s += "-" + unites;
+                }
+                else{
+                s += "-" + unites + " - " + reste + "/" + Math.abs(denominator);
+               }
+            }
+        }
+        return s;
 	}
+	/**
+	 * MUGISHA Tuyishime Rodrigue
+	 * Calcul du PGCD entre 2 nombres
+	 * 
+	 * @param a premier terme
+	 * @param b second terme
+	 * 
+	 * @return le plus grand diviseur commun entre le nombre a et b
+	 */
+	public int pgcd (int a , int b ) {
+        while(b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+        }
+        return a;
+        
+        }
 	
 	/** 	PASTORI Lucas
 	 * Computes the sum of two fractions.  Operands are left unmodified. 
