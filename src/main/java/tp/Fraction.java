@@ -44,7 +44,7 @@ public class Fraction {
 	 * @return the numerator
 	 */
 	public int getNumerator() {
-		return numerator;
+		return this.numerator;
 	}
 	/** 	DERREUMAUX Valentin
 	 * After any change, the fraction is reduced
