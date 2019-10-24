@@ -88,6 +88,7 @@ public class Fraction {
 	/** MUGISHA Tuyishime Rodrigue
 	 * Represents the fraction as a mixed number, i.e. the sum of a integer and 
 	 * a proper fraction. 
+	 * 
 	 * Ex : 1 + 1/2
 	 * Ex : 3/2
 	 * @return a textual representation of the fraction as a mixed number. 

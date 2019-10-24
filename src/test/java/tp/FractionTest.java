@@ -160,6 +160,8 @@ class FractionTest {
 		assertEquals("3", f.asMixedNumber());
 		f = new Fraction(16,-4);
 		assertEquals("-4", f.asMixedNumber());
+		f = new Fraction(18,5);
+		assertEquals("3 + 3/5", f.asMixedNumber());
 		
 	}
 
