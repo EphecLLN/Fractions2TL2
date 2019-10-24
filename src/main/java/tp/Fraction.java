@@ -39,6 +39,12 @@ public class Fraction {
 	 */
 	public Fraction (int wholePart , Fraction properFrac) {
 		super();
+		int num = properFrac.getDenominator();
+		int denum = num;
+		num *= wholePart;
+		num += properFrac.getNumerator();
+		this.setNumerator(num); 
+		this.setDenominator(denum);	
 	}
 	/**	DEBONGNIE Nathan
 	 * @return the numerator
