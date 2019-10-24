@@ -102,7 +102,9 @@ public class Fraction {
 	 * @return a new fraction which is the sum of f and the current fraction, in its reduced form. 
 	 */
 	public Fraction add(Fraction f) {
-		return null;
+		float fraction;
+		fraction = (f.numerator/f.denominator) + (this.numerator/this.denominator);
+		return fraction;
 	}
 	
 	/** PERDAENS Martin
