@@ -211,7 +211,16 @@ public class Fraction {
 	 * @return true if the absolute value of the difference between f and the current fraction is a unit fraction
 	 */
 	public boolean isAdjacentTo(Fraction f) {
-		return true;
+		double fract1 = f.numerator/f.denominator;
+		double fract2 = this.numerator/this.denominator;
+		double valeur = Math.abs(fract1 - fract2);
+		
+		if(valeur > 0 && valeur <= 1) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	/** 	COTTON Victor
