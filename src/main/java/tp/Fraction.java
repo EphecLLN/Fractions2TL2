@@ -74,8 +74,30 @@ public class Fraction {
 	 * the numerator must be positive and the denominator must be negative. 
 	 */
 	private void reduce() {
+        	int n = numerator;
+		int d = denominator;
+		int lePlusGrand;
 		
-	} 
+        	if (numerator < 0) {
+           		n = -numerator;
+        	}
+       	 	if (n > d) {
+           		lePlusGrand = n;
+        	}
+        	else {
+            		lePlusGrand = d;
+        	}
+        	int diviseur = 0;
+        	for (int i = lePlusGrand; i >= 2; i--) {
+            		if (numerator % i == 0 && denominator % i == 0) {
+                	diviseur = i;
+            		}
+		}
+        	if (diviseur != 0) {
+            		numerator /= gcd;
+            		denominator /= gcd;
+        	}
+	}  
 	/** 	MICHOTTE Martin
 	 * Get a textual representation of the fraction
 	 * Ex : 3, 1/2, 4/3
