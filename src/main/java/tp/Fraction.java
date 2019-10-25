@@ -159,7 +159,12 @@ public class Fraction {
 	 * @return true if the current fraction is strictly less than 0
 	 */
 	public boolean isNegative() {
-		return false;
+		if(this.numerator < 0) {
+			return true;
+		}
+		else {
+			return false;
+			}
 	}
 	
 	/** 	GODART Arno
@@ -211,7 +216,9 @@ public class Fraction {
 	 * @return the decimal value of the fraction
 	 */
 	public double toDouble() {
-		return 0.0;
+		double num = this.numerator; 
+		double den = this.denominator; 
+		return num/den; 
 	}
 	
 	/** GODART Arno
